@@ -187,18 +187,35 @@ function sumOfDuplicateValues(arr: number[]) {
 console.log(sumOfDuplicateValues(arr12));
 
 // Soal 13
-let str13: string = "rock";
+let str13: string = "paper";
 let arr13: string[] = [`rock`, `paper`, `scissor`];
 function rockPaperScissor(str: string, arr: string[]) {
   let randomPick: string = Math.floor(Math.random() * arr.length);
   console.log(randomPick, arr[randomPick]);
-  switch (str) {
-    case (randomPick, arr[randomPick])[1] === "scissor":
-      return `Win`;
-    case (randomPick, arr[randomPick])[1] === "paper":
+  if (str === `rock`) {
+    if ((randomPick, arr[randomPick][1] === `rock`)) {
+      return "Draw";
+    } else if ((randomPick, arr[randomPick][1] === `paper`)) {
       return `Lose`;
-    case (randomPick, arr[randomPick])[1] === "rock":
+    } else {
+      return `Win`;
+    }
+  } else if (str === `paper`) {
+    if ((randomPick, arr[randomPick][1] === `rock`)) {
+      return "Win";
+    } else if ((randomPick, arr[randomPick][1] === `paper`)) {
       return `Draw`;
+    } else {
+      return `Lose`;
+    }
+  } else {
+    if ((randomPick, arr[randomPick][1] === `rock`)) {
+      return "Lose";
+    } else if ((randomPick, arr[randomPick][1] === `paper`)) {
+      return `Win`;
+    } else {
+      return `Draw`;
+    }
   }
 }
 console.log(rockPaperScissor(str13, arr13));
